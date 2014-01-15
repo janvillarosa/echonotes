@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Echonotes</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_delete">Delete Echonote</string>
+    <string name="action_search">Search</string>
+    <string name="action_newtext">Add Text</string>
+    <string name="action_newphoto">Add Photo</string>
+
+    <string-array name="items">
+        <item>New Echonote</item>
+        <item>Select Notes</item>
+    </string-array>
+
+    <string name="drawer_open">Open drawer</string>
+    <string name="drawer_close">Close drawer</string>
+
+    <string name="search_hint">Search notes</string>
+
+    <string-array name="sort_options">
+        <item>Date Created</item>
+        <item>Title</item>
+    </string-array>
+
+</resources>

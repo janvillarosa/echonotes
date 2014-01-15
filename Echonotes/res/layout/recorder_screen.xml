@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/imageButtonContainer"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:background="@drawable/recordnote_bg"
+        android:orientation="horizontal"
+        android:weightSum="4" >
+
+        <LinearLayout
+            android:id="@+id/buttonLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="2dp"
+            android:weightSum="2" >
+
+            <ImageView
+                android:id="@+id/newTextNoteImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:src="@drawable/add_note_annotation" />
+
+            <ImageView
+                android:id="@+id/newPhotoImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:src="@drawable/add_picture_annotation" />
+
+        </LinearLayout>
+
+        <Chronometer
+            android:id="@+id/recordTimeChronometer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:fontFamily="sans-serif-light"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+        
+        <ImageView
+            android:id="@+id/startRecordImageView"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:clickable="true"
+            android:src="@drawable/start_record" />
+
+        <TextView
+            android:id="@+id/numAnnotationsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/recordTimeChronometer"
+            android:layout_alignRight="@+id/recordTimeChronometer"
+            android:fontFamily="sans-serif-light"
+            android:text="0 annotations"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/noteNameEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/numAnnotationsTextView"
+            android:layout_alignTop="@+id/startRecordImageView"
+            android:background="@null"
+            android:ems="10"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="right"
+            android:hint="Untitled Note"
+            android:maxLength="22"
+            android:textColor="#000000"
+            android:textSize="24sp" >
+
+            <requestFocus/>
+        </EditText>
+
+    </RelativeLayout>
+
+    <ViewStub
+        android:id="@+id/annotationShowStub"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/imageButtonContainer"
+        android:inflatedId="@+id/annotationShower"
+        android:layout="@layout/annotation_shower_layout" />
+
+    <ViewStub
+        android:id="@+id/imageAnnotationShowStub"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/imageButtonContainer"
+        android:inflatedId="@+id/annotationShower"
+        android:layout="@layout/annotation_image_shower" />
+
+    <ViewStub
+        android:id="@+id/stub"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:inflatedId="@+id/subTree"
+        android:layout="@layout/text_annotation" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/imageButtonContainer"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title = "NOTE SETTINGS">
+        <PreferenceScreen android:title="Change Tag Names" 
+            			  android:summary="Change names of existing tags" >
+            <EditTextPreference android:key="etTagPos0" android:dialogTitle="New Tag Name" />
+            <EditTextPreference android:key="etTagPos1" android:dialogTitle="New Tag Name"/>
+            <EditTextPreference android:key="etTagPos2" android:dialogTitle="New Tag Name"/>
+            <EditTextPreference android:key="etTagPos3" android:dialogTitle="New Tag Name"/>
+            <EditTextPreference android:key="etTagPos4" android:dialogTitle="New Tag Name"/>
+            <EditTextPreference android:key="etTagPos5" android:dialogTitle="New Tag Name"/>
+        </PreferenceScreen>
+        <CheckBoxPreference android:title = "Record even on standby"
+            				android:key = "RecordPreference"
+            				android:defaultValue="true" />"
+    </PreferenceCategory>
+    <PreferenceCategory android:title="MISCELLANEOUS">
+        <ListPreference android:title="Sort Echonotes by"
+            android:key="SortPreference" 
+            android:entries="@array/sort_options"
+            android:entryValues="@array/sort_options" />
+       <CheckBoxPreference android:title = "Hide Notification"
+           				   android:key="NotifsPreference"/>
+    </PreferenceCategory>
+ 
+    
+</PreferenceScreen>

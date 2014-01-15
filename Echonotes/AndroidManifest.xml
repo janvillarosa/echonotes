@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mobicom.echonotes"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <uses-feature android:name="android.hardware.camera" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="Echonotes"
+        android:theme="@style/MyTheme" >
+        <activity
+            android:name="com.mobicom.echonotes.activity.ListOfNotes"
+            android:label="Echonotes" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                
+            </intent-filter>
+            <meta-data android:name="android.app.default_searchable"
+                   android:resource="@xml/searchable" />
+            <intent-filter>
+    		<action android:name="android.intent.action.SEARCH" />
+			</intent-filter>
+        </activity>
+        <activity
+            android:name="com.mobicom.echonotes.activity.RecordNote"
+            android:label="New Echonote"
+            android:parentActivityName="com.mobicom.echonotes.activity.ListOfNotes" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mobicom.echonotes.ListOfNotes" />
+        </activity>
+        <activity
+            android:name="com.mobicom.echonotes.activity.SearchResultsActivity"
+            android:launchMode="singleTop"
+            android:label="Search Results"
+            android:parentActivityName="com.mobicom.echonotes.activity.ListOfNotes" >
+        </activity>
+         <activity
+            android:name="com.mobicom.echonotes.activity.PlayNote"
+            android:label="Review This Echonote"
+            android:parentActivityName="com.mobicom.echonotes.activity.ListOfNotes" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.mobicom.echonotes.activity.Preferences"
+            android:label="Settings"
+            android:launchMode="singleTop"
+            android:parentActivityName="com.mobicom.echonotes.activity.ListOfNotes" >
+            </activity>
+    </application>
+
+</manifest>
