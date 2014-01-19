@@ -10,7 +10,7 @@
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <uses-feature android:name="android.hardware.camera" />
@@ -26,13 +26,15 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-                
             </intent-filter>
-            <meta-data android:name="android.app.default_searchable"
-                   android:resource="@xml/searchable" />
+
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:resource="@xml/searchable" />
+
             <intent-filter>
-    		<action android:name="android.intent.action.SEARCH" />
-			</intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
         </activity>
         <activity
             android:name="com.mobicom.echonotes.activity.RecordNote"
@@ -44,11 +46,11 @@
         </activity>
         <activity
             android:name="com.mobicom.echonotes.activity.SearchResultsActivity"
-            android:launchMode="singleTop"
             android:label="Search Results"
+            android:launchMode="singleTop"
             android:parentActivityName="com.mobicom.echonotes.activity.ListOfNotes" >
         </activity>
-         <activity
+        <activity
             android:name="com.mobicom.echonotes.activity.PlayNote"
             android:label="Review This Echonote"
             android:parentActivityName="com.mobicom.echonotes.activity.ListOfNotes" >
@@ -61,7 +63,7 @@
             android:label="Settings"
             android:launchMode="singleTop"
             android:parentActivityName="com.mobicom.echonotes.activity.ListOfNotes" >
-            </activity>
+        </activity>
     </application>
 
 </manifest>

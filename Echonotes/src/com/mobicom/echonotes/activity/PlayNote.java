@@ -198,12 +198,14 @@ public class PlayNote extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 
 		switch (item.getItemId()) {
-		case R.id.action_newtext:
-			return true;
-		case R.id.action_settings:
-			openSettings();
+		/* FOR EDITING NOTES. WILL BE IMPLEMENTED IN THE FUTURE
+		 * case R.id.action_newtext:
 			return true;
 		case R.id.action_newphoto:
+			return true;
+		*/
+		case R.id.action_settings:
+			openSettings();
 			return true;
 		case R.id.action_delete:
 			deleteNote();

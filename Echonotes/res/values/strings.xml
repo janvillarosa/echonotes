@@ -10,12 +10,10 @@
 
     <string-array name="items">
         <item>New Echonote</item>
-        <item>Select Notes</item>
     </string-array>
 
     <string name="drawer_open">Open drawer</string>
     <string name="drawer_close">Close drawer</string>
-
     <string name="search_hint">Search notes</string>
 
     <string-array name="sort_options">
