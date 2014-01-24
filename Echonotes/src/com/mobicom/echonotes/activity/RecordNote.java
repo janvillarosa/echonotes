@@ -187,10 +187,10 @@ public class RecordNote extends Activity {
 						currentNote.setName(noteName.getText().toString());
 						noteNameString = noteName.getText().toString();
 					} else {
-						annotationPanel.setVisibility(View.VISIBLE);
 						currentNote.setName("Untitled Note");
 						noteNameString = "Untitled Note";
 					}
+					annotationPanel.setVisibility(View.VISIBLE);
 					createDirectory();
 
 					currentNote.setRecordingFilePath(path);

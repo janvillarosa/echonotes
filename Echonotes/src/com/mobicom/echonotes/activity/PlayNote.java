@@ -410,7 +410,7 @@ public class PlayNote extends Activity {
 					textStub.setVisibility(View.VISIBLE);
 					imageStub.setVisibility(View.GONE);
 					textStub.startAnimation(AnimationUtils.loadAnimation(
-							getApplicationContext(), R.anim.slide_up_left));
+							getApplicationContext(), R.anim.slide_up));
 					annotationIterator++;
 					skippingEnbled();
 				} else {
@@ -428,7 +428,7 @@ public class PlayNote extends Activity {
 					imageStub.setVisibility(View.VISIBLE);
 					textStub.setVisibility(View.GONE);
 					imageStub.startAnimation(AnimationUtils.loadAnimation(
-							getApplicationContext(), R.anim.slide_up_left));
+							getApplicationContext(), R.anim.slide_up));
 					annotationIterator++;
 					skippingEnbled();
 				}
