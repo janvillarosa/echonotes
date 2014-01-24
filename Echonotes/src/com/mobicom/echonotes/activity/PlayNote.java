@@ -217,7 +217,7 @@ public class PlayNote extends Activity {
 	
 	private void deleteNote(){
 		db.deleteNote(currentNote.getNoteId());
-		db.deleteAnnotationOfNote(currentNote.getNoteName());
+		//db.deleteAnnotationOfNote(currentNote.getNoteName());
 		NoteModifier deleter = new NoteModifier();
 		deleter.deleteNote(currentNote.getRecordingFilePath());
 		finish();

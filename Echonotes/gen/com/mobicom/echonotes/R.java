@@ -9,9 +9,10 @@ package com.mobicom.echonotes;
 
 public final class R {
     public static final class anim {
-        public static final int slide_out_up=0x7f040000;
-        public static final int slide_up=0x7f040001;
-        public static final int slide_up_left=0x7f040002;
+        public static final int slide_down=0x7f040000;
+        public static final int slide_out_up=0x7f040001;
+        public static final int slide_up=0x7f040002;
+        public static final int slide_up_left=0x7f040003;
     }
     public static final class array {
         public static final int items=0x7f090000;
@@ -78,15 +79,15 @@ public final class R {
         public static final int stop_record=0x7f020026;
     }
     public static final class id {
-        public static final int action_delete=0x7f0c0033;
-        public static final int action_search=0x7f0c0031;
-        public static final int action_settings=0x7f0c0032;
+        public static final int action_delete=0x7f0c0034;
+        public static final int action_search=0x7f0c0032;
+        public static final int action_settings=0x7f0c0033;
         public static final int annotationCountTextView=0x7f0c0006;
-        public static final int annotationShowStub=0x7f0c0028;
-        public static final int annotationShower=0x7f0c0029;
-        public static final int buttonLayout=0x7f0c0021;
+        public static final int annotationShowStub=0x7f0c0029;
+        public static final int annotationShower=0x7f0c002a;
+        public static final int buttonLayout=0x7f0c0022;
         public static final int buttonsListView_gui=0x7f0c0010;
-        public static final int cancelTextButton=0x7f0c002f;
+        public static final int cancelTextButton=0x7f0c0030;
         public static final int colorView=0x01010000;
         public static final int dateTextView=0x7f0c000a;
         public static final int drawer_layout=0x7f0c000c;
@@ -95,21 +96,21 @@ public final class R {
         public static final int echoNotesTextView=0x7f0c000f;
         public static final int imageAnnotationCountTextView=0x7f0c0004;
         public static final int imageAnnotationImageView=0x7f0c0002;
-        public static final int imageAnnotationShowStub=0x7f0c002a;
+        public static final int imageAnnotationShowStub=0x7f0c002b;
         public static final int imageButtonContainer=0x7f0c0016;
         public static final int imageView1=0x7f0c000b;
         public static final int listBGImageView=0x7f0c0008;
         public static final int navListLayout=0x7f0c0013;
         public static final int newNoteButton=0x7f0c0012;
-        public static final int newPhotoImageView=0x7f0c0023;
-        public static final int newTextNoteImageView=0x7f0c0022;
+        public static final int newPhotoImageView=0x7f0c0024;
+        public static final int newTextNoteImageView=0x7f0c0023;
         public static final int nextAnnotation=0x7f0c0020;
         public static final int noteListView=0x7f0c000d;
-        public static final int noteNameEditText=0x7f0c0027;
+        public static final int noteNameEditText=0x7f0c0028;
         public static final int noteNameTextView=0x7f0c0007;
         public static final int numAnnotationTextView=0x7f0c0009;
         public static final int numAnnotations=0x7f0c001d;
-        public static final int numAnnotationsTextView=0x7f0c0026;
+        public static final int numAnnotationsTextView=0x7f0c0027;
         public static final int playAnnotationImageShower=0x7f0c0017;
         public static final int playAnnotationShower=0x7f0c0019;
         public static final int playRecordingImageView=0x7f0c001f;
@@ -117,17 +118,18 @@ public final class R {
         public static final int playerImageStub=0x7f0c0015;
         public static final int playerTextStub=0x7f0c0018;
         public static final int previousAnnotation=0x7f0c001e;
-        public static final int recordTimeChronometer=0x7f0c0024;
-        public static final int saveTextButton=0x7f0c002e;
-        public static final int searchResultsListView=0x7f0c002d;
+        public static final int recordTimeChronometer=0x7f0c0025;
+        public static final int recordToolbar=0x7f0c0021;
+        public static final int saveTextButton=0x7f0c002f;
+        public static final int searchResultsListView=0x7f0c002e;
         public static final int seekBar1=0x7f0c001b;
-        public static final int startRecordImageView=0x7f0c0025;
-        public static final int stub=0x7f0c002b;
-        public static final int subTree=0x7f0c002c;
+        public static final int startRecordImageView=0x7f0c0026;
+        public static final int stub=0x7f0c002c;
+        public static final int subTree=0x7f0c002d;
         public static final int tagText=0x01010001;
         public static final int tagsListView_gui=0x7f0c0011;
         public static final int text1=0x7f0c0014;
-        public static final int textAnnotationEditText=0x7f0c0030;
+        public static final int textAnnotationEditText=0x7f0c0031;
         public static final int textAnnotationShowTextView=0x7f0c0005;
         public static final int view1=0x7f0c0001;
         public static final int view2=0x7f0c0003;

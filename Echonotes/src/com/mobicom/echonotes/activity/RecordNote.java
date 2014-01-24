@@ -191,6 +191,8 @@ public class RecordNote extends Activity {
 						noteNameString = "Untitled Note";
 					}
 					annotationPanel.setVisibility(View.VISIBLE);
+					annotationPanel.startAnimation(AnimationUtils.loadAnimation(
+							getApplicationContext(), R.anim.slide_down));
 					createDirectory();
 
 					currentNote.setRecordingFilePath(path);
