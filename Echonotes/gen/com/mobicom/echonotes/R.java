@@ -9,7 +9,9 @@ package com.mobicom.echonotes;
 
 public final class R {
     public static final class anim {
-        public static final int slide_up_left=0x7f040000;
+        public static final int slide_out_up=0x7f040000;
+        public static final int slide_up=0x7f040001;
+        public static final int slide_up_left=0x7f040002;
     }
     public static final class array {
         public static final int items=0x7f090000;
@@ -47,31 +49,33 @@ public final class R {
         public static final int catmarker_orange=0x7f020009;
         public static final int catmarker_purple=0x7f02000a;
         public static final int catmarker_red=0x7f02000b;
-        public static final int ic_action_camera=0x7f02000c;
-        public static final int ic_action_next_item=0x7f02000d;
-        public static final int ic_action_next_item_pressed=0x7f02000e;
-        public static final int ic_action_pause=0x7f02000f;
-        public static final int ic_action_play=0x7f020010;
-        public static final int ic_action_previous_item=0x7f020011;
-        public static final int ic_action_previous_item_pressed=0x7f020012;
-        public static final int ic_action_search=0x7f020013;
-        public static final int ic_action_text_annotation=0x7f020014;
-        public static final int ic_drawer=0x7f020015;
-        public static final int ic_drawer_closed=0x7f020016;
-        public static final int ic_launcher=0x7f020017;
-        public static final int ic_stat_device_access_mic=0x7f020018;
-        public static final int line_item=0x7f020019;
-        public static final int list_bg=0x7f02001a;
-        public static final int list_divider=0x7f02001b;
-        public static final int newnote_button=0x7f02001c;
-        public static final int newnote_button_pressed=0x7f02001d;
-        public static final int playnote_bg=0x7f02001e;
-        public static final int recording_separator=0x7f02001f;
-        public static final int recordnote_bg=0x7f020020;
-        public static final int separator_mainscreen=0x7f020021;
-        public static final int start_record=0x7f020022;
-        public static final int start_record_pressed=0x7f020023;
-        public static final int stop_record=0x7f020024;
+        public static final int ic_action_accept=0x7f02000c;
+        public static final int ic_action_camera=0x7f02000d;
+        public static final int ic_action_cancel=0x7f02000e;
+        public static final int ic_action_next_item=0x7f02000f;
+        public static final int ic_action_next_item_pressed=0x7f020010;
+        public static final int ic_action_pause=0x7f020011;
+        public static final int ic_action_play=0x7f020012;
+        public static final int ic_action_previous_item=0x7f020013;
+        public static final int ic_action_previous_item_pressed=0x7f020014;
+        public static final int ic_action_search=0x7f020015;
+        public static final int ic_action_text_annotation=0x7f020016;
+        public static final int ic_drawer=0x7f020017;
+        public static final int ic_drawer_closed=0x7f020018;
+        public static final int ic_launcher=0x7f020019;
+        public static final int ic_stat_device_access_mic=0x7f02001a;
+        public static final int line_item=0x7f02001b;
+        public static final int list_bg=0x7f02001c;
+        public static final int list_divider=0x7f02001d;
+        public static final int newnote_button=0x7f02001e;
+        public static final int newnote_button_pressed=0x7f02001f;
+        public static final int playnote_bg=0x7f020020;
+        public static final int recording_separator=0x7f020021;
+        public static final int recordnote_bg=0x7f020022;
+        public static final int separator_mainscreen=0x7f020023;
+        public static final int start_record=0x7f020024;
+        public static final int start_record_pressed=0x7f020025;
+        public static final int stop_record=0x7f020026;
     }
     public static final class id {
         public static final int RelativeLayout1=0x7f0c0015;

@@ -317,13 +317,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 	public ArrayList<Note> getNotesofTag(int tagID) {
 		ArrayList<Note> notes = new ArrayList<Note>();
-		String selectQuery = "SELECT " + "tn." + KEY_NAME+ "," + "tn." 
-				+ KEY_ID + ", tn." + KEY_DATE_MODIFIED + "," + KEY_FILE_PATH 
-				+" FROM " + TABLE_NOTES + " AS tn, "
-				+ TABLE_TAGS + " AS tt, " + TABLE_NOTES_TAGS + " AS tnt WHERE tnt."
-				+ KEY_TAG_ID + " = " + tagID + " AND tt." + KEY_ID
-				+ " = " + "tnt." + KEY_TAG_ID + " AND tn." + KEY_ID + " = "
-				+ "tnt." + KEY_NOTE_ID;
+		String selectQuery = "SELECT " + "tn." + KEY_NAME + "," + "tn."
+				+ KEY_ID + ", tn." + KEY_DATE_MODIFIED + "," + KEY_FILE_PATH
+				+ " FROM " + TABLE_NOTES + " AS tn, " + TABLE_TAGS + " AS tt, "
+				+ TABLE_NOTES_TAGS + " AS tnt WHERE tnt." + KEY_TAG_ID + " = "
+				+ tagID + " AND tt." + KEY_ID + " = " + "tnt." + KEY_TAG_ID
+				+ " AND tn." + KEY_ID + " = " + "tnt." + KEY_NOTE_ID;
 
 		SQLiteDatabase db = this.getReadableDatabase();
 		Cursor c = db.rawQuery(selectQuery, null);
@@ -332,10 +331,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		if (c.moveToFirst()) {
 			do {
 				Note n = new Note();
-				n.setNoteId(c.getInt((c.getColumnIndex(""+KEY_ID))));
-				n.setNoteName(c.getString(c.getColumnIndex(""+KEY_NAME)));
-				n.setDateModified(c.getString(c
-						.getColumnIndex(""+KEY_DATE_MODIFIED)));
+				n.setNoteId(c.getInt((c.getColumnIndex("" + KEY_ID))));
+				n.setNoteName(c.getString(c.getColumnIndex("" + KEY_NAME)));
+				n.setDateModified(c.getString(c.getColumnIndex(""
+						+ KEY_DATE_MODIFIED)));
 				n.setRecordingFilePath(c.getString(c
 						.getColumnIndex(KEY_FILE_PATH)));
 
@@ -345,14 +344,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		}
 		return notes;
 	}
-	
+
 	public ArrayList<Tag> getTagofNote(int noteID) {
 		ArrayList<Tag> tags = new ArrayList<Tag>();
 		String selectQuery = "SELECT  * FROM " + TABLE_TAGS + " tt, "
 				+ TABLE_NOTES + " tn, " + TABLE_NOTES_TAGS + " tnt WHERE tnt."
-				+ KEY_NOTE_ID + " = " + noteID + " AND tn." + KEY_ID
-				+ " = " + "tnt." + KEY_NOTE_ID + " AND tt." + KEY_ID + " = "
-				+ "tnt." + KEY_TAG_ID;
+				+ KEY_NOTE_ID + " = " + noteID + " AND tn." + KEY_ID + " = "
+				+ "tnt." + KEY_NOTE_ID + " AND tt." + KEY_ID + " = " + "tnt."
+				+ KEY_TAG_ID;
 
 		SQLiteDatabase db = this.getReadableDatabase();
 		Cursor c = db.rawQuery(selectQuery, null);
@@ -397,14 +396,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		}
 		return notes;
 	}
-	
+
 	public Note getNote(String noteName) {
 		String selectQuery = "SELECT  * FROM " + TABLE_NOTES + " WHERE "
 				+ KEY_NAME + " = '" + noteName + "'";
 
 		SQLiteDatabase db = this.getReadableDatabase();
 		Cursor c = db.rawQuery(selectQuery, null);
-		
+
 		Note n = new Note();
 
 		// looping through all rows and adding to list
@@ -416,7 +415,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 						.getColumnIndex(KEY_DATE_MODIFIED)));
 				n.setRecordingFilePath(c.getString(c
 						.getColumnIndex(KEY_FILE_PATH)));
-				
+
 			} while (c.moveToNext());
 		}
 		return n;
@@ -468,6 +467,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 				new String[] { String.valueOf(annotation_id) });
 		db.delete(TABLE_NOTES_ANNOTATIONS, KEY_ANNOTATION_ID + " = ?",
 				new String[] { String.valueOf(annotation_id) });
+
+	}
+
+	public void deleteAnnotationOfNote(String note_name) {
+		String selectQuery = "DELETE FROM " + TABLE_ANNOTATIONS + " a "+
+		"INNER JOIN " + TABLE_NOTES_ANNOTATIONS +" b on b." + KEY_ANNOTATION_ID + 
+		" = a." + KEY_ID + " AND b." + KEY_NOTE_ID + " = \"" + note_name + "\"";
+		SQLiteDatabase db = this.getWritableDatabase();
+		db.execSQL(selectQuery);
+		
 
 	}
 

@@ -30,7 +30,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewStub;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -49,15 +48,13 @@ public class RecordNote extends Activity {
 
 	private Uri fileUri;
 	private MediaRecorder mRecorder = null;
-	private ImageView startRecord, newPhoto, newText, imageAnnotation;
-	private Button saveText, cancelText;
+	private ImageView startRecord, newPhoto, newText, imageAnnotation, saveText, cancelText;
 	private EditText noteName, textAnnotation;
 	RecordingSession currentNote;
 
 	private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
 	private static final int MEDIA_TYPE_IMAGE = 1;
-	private ViewStub stub;
-	private View textStub, imageStub;
+	private View textStub, imageStub, stub, annotationPanel;
 	private Chronometer recordTime;
 	private TextView numAnnotations, textAnnotationShow, currAnnotationCount, currImageAnnotationCount;
 	private long timeStamp = 0;
@@ -89,11 +86,14 @@ public class RecordNote extends Activity {
 		recordTime = (Chronometer) findViewById(R.id.recordTimeChronometer);
 		numAnnotations = (TextView) findViewById(R.id.numAnnotationsTextView);
 
-		stub = (ViewStub) findViewById(R.id.stub);
-
+		stub = ((ViewStub) findViewById(R.id.stub)).inflate();
 		textStub = ((ViewStub) findViewById(R.id.annotationShowStub)).inflate();
 		imageStub = ((ViewStub) findViewById(R.id.imageAnnotationShowStub))
 				.inflate();
+		annotationPanel = (View) findViewById(R.id.buttonLayout);
+		annotationPanel.setVisibility(View.INVISIBLE);
+		
+		stub.setVisibility(View.INVISIBLE);
 		textStub.setVisibility(View.INVISIBLE);
 		imageStub.setVisibility(View.INVISIBLE);
 
@@ -187,6 +187,7 @@ public class RecordNote extends Activity {
 						currentNote.setName(noteName.getText().toString());
 						noteNameString = noteName.getText().toString();
 					} else {
+						annotationPanel.setVisibility(View.VISIBLE);
 						currentNote.setName("Untitled Note");
 						noteNameString = "Untitled Note";
 					}
@@ -250,8 +251,10 @@ public class RecordNote extends Activity {
 			public void onClick(View v) {
 
 				stub.setVisibility(View.VISIBLE);
+				stub.startAnimation(AnimationUtils.loadAnimation(
+						getApplicationContext(), R.anim.slide_up));
 
-				saveText = (Button) findViewById(R.id.saveTextButton);
+				saveText = (ImageView) findViewById(R.id.saveTextButton);
 				textAnnotation = (EditText) findViewById(R.id.textAnnotationEditText);
 
 				timeStamp = annotationTimestamp();
@@ -283,6 +286,8 @@ public class RecordNote extends Activity {
 
 						annotation_id = db.createAnnotation(annotation);
 						db.createNoteAnnotation(note_id, annotation_id);
+						stub.startAnimation(AnimationUtils.loadAnimation(
+								getApplicationContext(), R.anim.slide_out_up));
 						stub.setVisibility(View.GONE);
 
 						textAnnotationShow = (TextView) findViewById(R.id.textAnnotationShowTextView);
@@ -294,14 +299,14 @@ public class RecordNote extends Activity {
 						textAnnotation.setText("");
 
 						textStub.setVisibility(View.VISIBLE);
-						imageStub.setVisibility(View.INVISIBLE);
+						imageStub.setVisibility(View.GONE);
 
 						textStub.startAnimation(AnimationUtils.loadAnimation(
-								getApplicationContext(), R.anim.slide_up_left));
+								getApplicationContext(), R.anim.slide_up));
 					}
 				});
 
-				cancelText = (Button) findViewById(R.id.cancelTextButton);
+				cancelText = (ImageView) findViewById(R.id.cancelTextButton);
 
 				cancelText.setOnClickListener(new View.OnClickListener() {
 					@Override
@@ -388,11 +393,11 @@ public class RecordNote extends Activity {
 										.size() - 1));
 				imageAnnotation.setImageBitmap(myBitmap);
 
-				textStub.setVisibility(View.INVISIBLE);
+				textStub.setVisibility(View.GONE);
 				imageStub.setVisibility(View.VISIBLE);
 
 				imageStub.startAnimation(AnimationUtils.loadAnimation(
-						getApplicationContext(), R.anim.slide_up_left));
+						getApplicationContext(), R.anim.slide_up));
 
 			} else if (resultCode == RESULT_CANCELED) {
 			}

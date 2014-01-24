@@ -30,10 +30,11 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/view1"
         android:layout_alignTop="@+id/view1"
-        android:layout_marginLeft="15dp"
+        android:layout_alignRight="@+id/view1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_marginTop="45dp"
         android:fontFamily="serif"
-        android:text="Annotation Here"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textSize="24sp" />
 

@@ -1,31 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#ffffffff" >
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <View
+        android:id="@+id/viewShadow"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#777777" />
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="11dp"
+        android:layout_marginRight="11dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginBottom="11dp"
+        android:background="#ffffff" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/view1"
+        android:layout_alignTop="@+id/view1"
+        android:layout_alignRight="@+id/view1"
+        android:layout_marginTop="10dp"
         android:weightSum="2" >
 
-        <Button
+        <ImageView
             android:id="@+id/saveTextButton"
-            style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Save"
+            android:src="@drawable/ic_action_accept"
             android:textColor="#000000" />
 
-        <Button
+        <ImageView
             android:id="@+id/cancelTextButton"
-            style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Cancel"
+            android:src="@drawable/ic_action_cancel"
             android:textColor="#000000" />
     </LinearLayout>
 
@@ -33,7 +54,14 @@
         android:id="@+id/textAnnotationEditText"
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
-        android:ems="10"
+        android:layout_alignLeft="@+id/view1"
+        android:layout_alignRight="@+id/view1"
+        android:layout_alignTop="@+id/view1"
+        android:layout_alignBottom="@+id/view1"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="45dp"
         android:fontFamily="serif"
         android:gravity="top"
         android:hint="Enter your annotation"
@@ -41,4 +69,4 @@
         android:textColor="#000000"
         android:textSize="24sp" />
 
-</LinearLayout>
+</RelativeLayout>
