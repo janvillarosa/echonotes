@@ -240,8 +240,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 	public ArrayList<Note> getAllNotes() {
 		ArrayList<Note> notes = new ArrayList<Note>();
-		String selectQuery = "SELECT  * FROM " + TABLE_NOTES + 
-							 "ORDER BY " + DATE_MODIFIED + " DESC";
+		String selectQuery = "SELECT  * FROM " + TABLE_NOTES;
 
 		SQLiteDatabase db = this.getReadableDatabase();
 		Cursor c = db.rawQuery(selectQuery, null);
